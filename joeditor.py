@@ -35,6 +35,7 @@ scroll.config(command=text.yview)
 
 def changefont():
     global joefont
+    global joetuple
     global clicked
     joefont[0] = clicked.get()
     joetuple = (joefont[0], joefont[1], joefont[2])
