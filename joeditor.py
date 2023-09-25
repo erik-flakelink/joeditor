@@ -33,8 +33,15 @@ text = Text(root, yscrollcommand=scroll.set, font=joetuple)
 
 scroll.config(command=text.yview)
 
+def apply_size(selected_size):
+    global joefont
+    text.config(font=(joefont[0], selected_size))
+    joefont[1] = selected_size
+
 def apply_font(selected_font):
+    global joefont
     text.config(font=(selected_font, joefont[1]))
+    joefont[0] = selected_font
 
 def font():
     #ChatGPT Assistance, I made the font adjustments to the menu, changing font based on name
@@ -65,8 +72,20 @@ def font():
     canvas.config(scrollregion=canvas.bbox("all"))
 
     root.mainloop()
+
+def size():
+    global size_input
+    sizerama = size_input.get()
+    apply_size(sizerama)
+
 changefontbutton = Button(root, text="Font", command=font)
 changefontbutton.pack()
+
+size_input = Entry(root, width=4)
+size_input.pack()
+
+size_button = Button(root, text="Size", command=size)
+size_button.pack()
 
 text.pack()
 
