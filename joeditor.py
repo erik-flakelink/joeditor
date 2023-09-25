@@ -1,6 +1,6 @@
 from tkinter import *
 #joeditor
-#By Erik "Joe" Pastori
+#By "Joe"
 
 from tkinter import Tk, font
 
